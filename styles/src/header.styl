@@ -1,0 +1,102 @@
+/**
+ * @author Viacheslav Lotsmanov
+ */
+
+&
+	margin 0 auto
+	background white
+	z-index 2
+	position relative
+	size $container-md $header-height-md
+
+.container-fluid
+	height 100%
+
+	.col
+		height 100%
+		white-space nowrap
+
+		.middle-helper
+			display inline-block
+			vertical-align middle
+			height 100%
+
+		img.logo, a.phone, nav.main-menu
+			display inline-block
+			vertical-align middle
+
+		img.logo
+			margin-top -18px
+
+		a.phone
+			custom-font('Segoe UI')
+			font-metrics 28px 30px
+			white-space nowrap
+
+			&, &:hover
+				text-decoration none
+				border-bottom 0
+				color $text-color2
+
+				i
+					color $text-color3
+					font-style normal
+
+		&:nth-child(3)
+			text-align right
+
+		nav.main-menu
+			display inline-block
+
+			ul
+				display inline-block
+
+				&, > li
+					reset-box-model()
+
+				> li
+					$h = 40px
+					display inline-block
+					height 40px
+					custom-font('Segoe UI')
+					$fs = 19px
+					$lh = 21px
+					font-metrics $fs $lh
+
+					a, a:hover
+						display inline-block
+						padding 0 15px
+						text-decoration none
+						border-bottom 0
+						box-sizing border-box
+						$pt = 8px
+						padding-top $pt
+						padding-bottom ($h - ($lh + $pt))
+						transition background-color $anim-speed $anim-curve
+
+					&:nth-child(1)
+						a > span, a:hover > span
+							color $text-color4
+							border-bottom 1px dashed $text-color4
+							transition border-bottom-color $anim-speed $anim-curve
+						a:hover span
+							border-bottom-color alpha(white, 0%)
+
+					&:nth-child(2)
+						a > span, a:hover > span
+							color white
+						a
+							background $bg-color1
+							&:hover
+								background $bg-color4
+
+					&:nth-child(3)
+						a > span, a:hover > span
+							color white
+						a
+							background $bg-color2
+							&:hover
+								background $bg-color3
+
+					& + li
+						margin-left 12px

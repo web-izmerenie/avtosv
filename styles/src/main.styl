@@ -1,0 +1,34 @@
+/**
+ * @author Viacheslav Lotsmanov
+ */
+
+@import 'variables'
+
+@require 'bootstrap'
+@require 'nib'
+
+@import 'mixins'
+@import 'fonts'
+
+html, body
+	height 100%
+
+maxw($mw=$container-lg)
+	margin 0 auto
+	max-width $mw
+
+header
+	@import 'header'
+
+.top-part
+	maxw()
+	position relative
+	min-height 100%
+	padding-bottom ($footer-height + 40px)
+
+	@media (max-width $screen-sm-max)
+		padding-bottom 40px
+		min-height auto
+
+footer
+	@import 'footer'

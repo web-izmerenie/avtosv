@@ -1,0 +1,53 @@
+doctype html
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title АвтоСВ
+		link(
+			href="./styles/build/build.css"
+			rel="stylesheet"
+			type="text/css")
+		script(src="./scripts/build/build.js")
+	body
+		.top-part
+			header
+				.container-fluid
+					.col.col-md-3
+						span.middle-helper
+						img.logo(
+							alt="АвтоСВ логотип"
+							src="/images/logo.png")
+					.col.col-md-3
+						span.middle-helper
+						a.phone(href="tel:+79896100888") <i>8</i> (989) 6-100-888
+					.col.col-md-6
+						span.middle-helper
+						nav.main-menu
+							ul
+								li
+									a(href="#contacts")
+										span Контакты
+								li
+									a(href="#back-call")
+										span Обратный звонок
+								li
+									a(href="#make-order")
+										span Сделать заказ
+			.content-zone
+				main
+					.cards
+						.card.card-promo
+						.card.card-form
+						.card.card-advantages
+						.card.card-open-soon
+						.card.card-contacts
+		footer.footer-md
+			a.up(href="#up", title="Наверх") Наверх
+			.developer
+				a(href="http://web-izmerenie.ru", target="_blank")
+					img(
+						alt="Web izmerenie логотип"
+						src="./images/wi-logo.svg"
+						width=25
+						height=25)
+					span Разработка&nbsp;— Web&nbsp;izmerenie

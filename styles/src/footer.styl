@@ -1,0 +1,93 @@
+/**
+ * @author Viacheslav Lotsmanov
+ */
+
+$bottom-line-height = 19px
+
+&
+	maxw()
+	height $footer-height
+	margin-top -($footer-height)
+	background white
+	z-index 5
+	position relative
+	overflow hidden
+
+&:after
+	pseudo-block()
+	size 100% $bottom-line-height
+	background $bg-color1
+	absolute bottom 0
+	z-index -1
+
+a.up
+	$s = 56px
+
+	display block
+	background $bg-color1
+	size $s
+	border-radius ($s/2)
+	font-metrics 0 0
+	white-space nowrap
+	text-indent -40000px
+	overflow hidden
+	absolute left 50% bottom $bottom-line-height
+	transform translate(-50%, 50%)
+
+	&:before, &:after
+		$h = 9px
+		pseudo-block()
+		display block
+		size 22px $h
+		bg('icons/arrow-up.png', center center no-repeat)
+		absolute left 50% top (($s/2) - $h)
+		transform translateX(-50%)
+		z-index 5
+		transition opacity $anim-speed $anim-curve
+		opacity 1
+	&:after
+		opacity 0
+		bg-img('icons/arrow-up-active.png')
+
+	&:hover
+		&:before
+			opacity 0
+		&:after
+			opacity 1
+
+.developer
+	display block
+	custom-font('Segoe UI')
+	absolute right ($main-margin) top 17px
+
+	a
+		img, span
+			display inline-block
+			vertical-align middle
+
+		img + span
+			margin-left 10px
+
+		img
+			opacity 0.42
+			size 25px
+			transition opacity $anim-speed $anim-curve
+
+		&, &:hover, span
+			transition color $anim-speed $anim-curve,
+				border-bottom-color $anim-speed $anim-curve
+			color $text-color1
+			text-decoration none
+
+		span
+			border-bottom 1px solid alpha(white, 0%)
+
+		&:hover
+			&, span
+				color $text-color2
+
+			span
+				border-bottom-color $text-color2
+
+			img
+				opacity 1
